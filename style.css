@@ -5,8 +5,9 @@ body {
 }
 header {
     /* background: green; */
-    margin-bottom: 100px;
-    padding: 0; 
+    margin-bottom: 100px; 
+    /* display: flex; */
+    
     
     
 }
@@ -17,6 +18,7 @@ h1 {
     word-spacing: 10px;
     font-size: 3rem;
     font-weight: lighter;
+    
 }
 h2 {
     text-transform: uppercase;
@@ -61,15 +63,15 @@ li {
     margin: 6px;
     text-align: justify;
     font-weight: 500;
-    /* position: absolute; */
     
 }
 input {
-    position: relative;
+    margin-left: 87%;
+    
     border: none;
     border-bottom: 1px solid blue;
     border-right: 1px solid blue;
-    left: 81%;
+    justify-content: center;
     text-transform: capitalize;
 }
 
@@ -79,6 +81,7 @@ main {
 
 }
 .contenedor-padre {
+    
     display: grid;
     grid-template-columns: repeat(4, 1fr) ;
     grid-template-rows: repeat(6,1fr);
@@ -90,8 +93,8 @@ main {
 
 }
 img  {
-    width: 300px;
-    height: 300px;
+    max-width: 100%;
+    height: auto;
 }
 figcaption {
     text-align: center;
@@ -99,4 +102,64 @@ figcaption {
     text-transform: capitalize;
     padding-top: 10px;
 }
+.footer1 {
+    display: flex;
+    justify-content: space-between;
+}
+.footer1:first-child {
+    margin-left: 50px;
+}
+.footer1 p:nth-child(2) {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.footer1 p:nth-child(2):hover {
+    opacity: 1;
+}
+.footer1 p:last-child {
+    margin-right: 120px;
+}
+.footer2 {
+    display: flex;
+    justify-content: space-around;
+    opacity: 0;
+    animation: cambio 2s infinite;
+    
+}
+@keyframes cambio {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+@media (max-width: 768px) {
+    body {
+        background-color: lightcoral;
+    }
+    h1 h2 {
+        font-size: 2rem;
+        text-align: justify;
+    }
+    .volver {
+        justify-content: center;
+    }
+    .contenedor-padre {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        gap: 10px;
+    }
+    input {
+        margin-top: 20%;
+        margin-left: 30%;
+        width: 50%;
+    }
+    ul {
+        margin-left: 10%;
+    }
+    .footer1 {
+        flex-direction: column;
 
+    }
+}
